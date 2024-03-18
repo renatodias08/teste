@@ -1,86 +1,470 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    <context-param>
-        <param-name>javax.faces.PROJECT_STAGE</param-name>
-        <param-value>Development</param-value>
-    </context-param>
-    <servlet>
-        <servlet-name>Faces Servlet</servlet-name>
-        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08/10/2014, 11:17:52
+    Author     : Eximia
+*/
+
+object[type^="application/gas-events"] { 
+    display: none; 
+}
+
+body{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-family: 'Roboto' !important;
+    font-size: 12px !important;
+    background: white;
+}
+div{
+    padding-left: 0px !important;
+    padding-top: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+}
+div.panel{
+    color:#000000;
+    background: white;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+div.indexpanel{
+    color:#000000;
+    background: white;
+    margin: 9px;
+}
+div.pesquisa{
+    color:#000000;
+    background: #FFFFFF;
+    margin: 10px;
+}
+
+linkdoc{
+    color:#000000 !important;
+}
+
+/* Firstly Hide the unnecessary components */
+.ui-fileupload .start {
+    display: none;
+}
+.ui-fileupload .cancel {
+    display: none;
+}
+.ui-fileupload .progress {
+    /*  display: none; - if you wanted to hide the progress bar as well*/
+}
+.ui-fileupload  {
+    border: none;
+}
+.ui-progressbar {  /* made progress bar smaller to fit on same line */
+    width: 100px!important;
+    height: 5px!important;
+}
+.fileupload-buttonbar .fileinput-button .ui-icon-plusthick { /* remove icon from browse button */
+    display: none !important;
+}
+.fileupload-buttonbar .fileinput-button  .ui-button-text { /* removed icon from browse button so shifting text left*/
+    padding-left: 1em!important;
+}
+.ui-fileupload .fileupload-buttonbar {
+    border: none!important;
+    background: transparent;
+    background-color: transparent;
+    float: left; /* Keep button on left */
+} 
+.fileupload-content {
+    border: none!important;
+    border-bottom-left-radius: 0px!important;
+    border-bottom-right-radius: 0px!important;
+    background: transparent!important;
+    background-color: transparent!important;
+    float: right; /* and content on right */
+}
+
+.ui-widget-content.ui-menu-list.ui-corner-all.ui-helper-clearfix.ui-menu-child.ui-shadow{
+    left: 205px !important;
+}
+
+.iconovo{
+    background-image: url("/edocv3.0/javax.faces.resource/imagens/botao-novo.png.jsf") !important;
+}
+
+.paneli .ui-panelgrid .ui-panelgrid-cell{
+    border-width: 0 !important;
+    background: white !important;
+    padding: 4px 10px;
+}
+.paneli2.ui-panel .ui-panel-content {
+    border: 0;
+    background: white !important;
+    padding: 0.5em 1em;
+}
+.ui-layout-container{
+    overflow:hidden !important;
+}
+.ui-layout-west {
+    z-index:20  !important;
+    overflow:visible !important;
+}
+.ui-layout-west .ui-layout-unit-content {
+    overflow:visible !important;
+    background:#00AB98 !important;
+
+}
+
+.ui-layout, .ui-layout-doc, .ui-layout-unit, .ui-layout-wrap, .ui-layout-bd, .ui-layout-hd{
+    border: none;
+    visibility: hidden !important;
+}
+
+.ui-menu .ui-menu-parent .ui-menu-child {
+    position: fixed !important;
+    height: 100% !important;
+    width: 220px;
+}
+
+.ui-widget-content {
+    border: 0;
+    border-color: #ffffff;   
+}
+.ui-widget-content a{
+    color:#ffffff;
+}
+.ui-widget-content a:hover{
+    background: #008a7a !important;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    background: white !important;
+    box-shadow: 0px 0px 8px grey !important;
+}
+
+.ui-menu .ui-menu-child {
+    background: white
+}
+
+.ui-layout-unit.ui-widget.ui-widget-content.ui-corner-all.ui-layout-center.ui-layout-pane.ui-layout-pane-center.ui-layout-pane-hover.ui-layout-pane-center-hover.ui-layout-pane-open-hover.ui-layout-pane-center-open-hover{
+    width: auto !important;
+    left: 220px !important;
+}
+.ui-layout-unit.ui-widget.ui-widget-content.ui-corner-all.ui-layout-center.ui-layout-pane.ui-layout-pane-center{ 
+    width: auto !important; 
+    left: 220px !important;
+}
+.icon-controle{
+    background-image: url("/edocv3.0/javax.faces.resource/imagens/icone-controle24.png.jsf") !important;
+    height:26px !important;
+    width:24px !important   ;
+}
+.icon-analise{
+    background-image: url("/edocv3.0/javax.faces.resource/imagens/icone-analise24.png.jsf") !important;
+    height:27px !important;
+    width:24px !important   ;
+}
+.icon-user{
+    background-image: url("/edocv3.0/javax.faces.resource/imagens/icone-usuarios24.png.jsf") !important;
+    height:31px !important;
+    width:24px !important   ;
+}
+.icon-config{
+    background-image: url("/edocv3.0/javax.faces.resource/imagens/icone-configuracoes24.png.jsf") !important;
+    height:24px !important;
+    width:24px !important   ;
+}
+.ui-icon {
+    -moz-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+.ui-corner-all {
+    -moz-border-radius: 5px !important;
+    -webkit-border-radius: 5px !important;
+    border-radius: 5px !important;
+}
+
+.ui-menu .ui-menuitem{
+    margin: 4px 0 !important;
+}
+
+
+.ui-menu .ui-menuitem-text {
+    padding-top: 2px !important;
+    padding-left: 15px !important;
+
+}
+
+.ui-menu .ui-menu-parent .ui-icon-triangle-1-e, .ui-menu .ui-menu-parent .ui-icon-triangle-1-s, .ui-menubar .ui-menu-child .ui-icon-triangle-1-s, .ui-menubar .ui-menu-child .ui-icon-triangle-1-s {
+    color: blue;
+}
+
+#rodape /*rodapé do sistema */
+{
+    background:#ffffff;
+    border: 0;
+    font-weight:bold;
+    width:100%;
+    color:Black;
+    bottom:0px;
+    left:0px;
+    text-align: right;
+}
+
+
+.ui-dialog .ui-dialog-titlebar{
+    background: #00AB98 !important;
+    color: #FFFFFF !important;
+}
+
+.ui-datatable-odd {
+    height: 50px;
+    box-shadow: none !important;
+}
+
+.ui-datatable-even {
+    height: 50px;
+    box-shadow: none !important;
+}
+
+.ui-widget-header{
+    border: none;
+    text-shadow: none;
+}
+.ui-inputfield {
+    background-color: white !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: black !important;
+    border-radius: 2px !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    text-shadow: none;
+    border: none !important;
+    background-color: #00AB98;
+    color: white;
+    box-shadow: none;
+}
+
+
+.ui-paginator-page{
+    background-color: #00AB98 !important;
+    text-decoration: none !important;
+    color: white !important;
+    border: none !important;
+}
+
+.titulo{
+    font-size: 30px;
+    font-weight: bold;
+    color: #00AB98;
+}
+.titulo2{
+    font-size: 25px;
+    text-shadow: #434343 1px 1px 10px;
+    color: #00AB98;
+}
+
+.ui-panel .ui-panel-content {
+    background: #FFFFFF;
+}
+
+.ui-button-text.ui-c {
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+.teste .ui-state-active{
+    background-color: #00AB98;    
+}
+.ui-dialog .ui-dialog-content{
+    overflow: hidden !important;
+}
+
+body li.ui-menuitem a.ui-menuitem-link .ui-icon[class^="fa-"], body li.ui-menuitem a.ui-menuitem-link .ui-icon[class*=" fa-"]{
+    padding-top: 1px;
+}
+pnl-botoes{
+    top:10px; 
+    bottom: 10px;
     
-    <servlet-mapping>
-        <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>/faces/*</url-pattern>
-    </servlet-mapping>
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
-    <welcome-file-list>
-        <welcome-file>faces/dashboard.xhtml</welcome-file>
-    </welcome-file-list>
-    
-    
-    
-    
-    
-    <context-param>
-        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
-        <param-value>server</param-value>
-    </context-param>
-    <context-param>
-        <param-name>primefaces.THEME</param-name>
-        <param-value>siberia-#{guestPreferences.theme}</param-value>
-    </context-param>  
-  <context-param>
-        <param-name>primefaces.FONT_AWESOME</param-name>
-        <param-value>true</param-value>
-    </context-param>
-    <context-param>
-        <param-name>javax.faces.FACELETS_LIBRARIES</param-name>
-        <param-value>/WEB-INF/primefaces-siberia.taglib.xml</param-value>
-    </context-param>   
-    
-    
- 
-    <listener>
-        <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
-    </listener>
-    <filter>
-        <filter-name>Character Encoding Filter</filter-name>
-        <filter-class>org.primefaces.siberia.filter.CharacterEncodingFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>Character Encoding Filter</filter-name>
-        <servlet-name>Faces Servlet</servlet-name>
-    </filter-mapping>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</web-app>
+}
+button.salvar{
+    width: 100px;
+    padding-left: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 3px;
+}
+
+button.cancelar{
+    width: 100px;
+    padding-left: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 3px;
+}
+button.atualizar{
+    width: 80px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 3px;
+}
+
+button.mostrar{ 
+    padding-left: 20px;
+    padding-right: 2px;
+}
+
+button.mostrarlog{ 
+    color: blue !important;
+}
+
+.ui-datatable tbody td {
+    border: none;
+}
+
+div.mostraimagem{
+    max-height:600px;
+    max-width: 800px;
+
+}
+img.mostraimagem {
+    max-width:800px;
+    max-height:600px;
+    width: auto;
+    height: auto;
+}
+div.email{
+    top: 10% !important;
+}
+.ui-button {
+    background-color: #00AB98 !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 4px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px !important;
+    min-width: 150px !important;
+
+    margin-right: .1em;
+    text-decoration: none !important;
+    cursor: pointer;
+    text-align: center;
+    overflow: visible; /* the overflow property removes extra width in IE */
+}
+.ui-button .ui-button-text {
+    display: block;
+    line-height: normal;
+}
+.ui-button.rounded-button {
+    border-radius: 2rem; 
+}
+.ui-button.rounded-button.circle-button {
+    border-radius: 50%; 
+}
+.coluna1{
+    width: 100px;
+}
+.coluna2{
+    width: 100px;
+}
+.coluna3{
+    width: 10px;
+}
+.coluna5{
+    width: 5px;
+}
+.coluna50{
+    width: 50px;
+}
+.coluna150{
+    width: 150px;
+}
+.coluna200{
+    width: 150px;
+}
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  

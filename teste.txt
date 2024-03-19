@@ -78,6 +78,11 @@ linkdoc{
     background-color: transparent;
     float: left; /* Keep button on left */
 } 
+
+.ui-paginator {
+    background: none #00AB98;
+}
+
 .fileupload-content {
     border: none!important;
     border-bottom-left-radius: 0px!important;
@@ -114,7 +119,7 @@ linkdoc{
 }
 .ui-layout-west .ui-layout-unit-content {
     overflow:visible !important;
-    background:#00AB98 !important;
+    background: none #00AB98 !important;
 
 }
 
@@ -217,7 +222,7 @@ linkdoc{
 
 
 .ui-dialog .ui-dialog-titlebar{
-    background: #00AB98 !important;
+    background: none #00AB98 !important;
     color: #FFFFFF !important;
 }
 
@@ -243,17 +248,25 @@ linkdoc{
     border-radius: 2px !important;
 }
 
+.ui-menu {
+    background-color: #00AB98 !important;
+}
+
+.ui-layout-unit-content {
+    height: 100vh !important;
+}
+
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
     text-shadow: none;
     border: none !important;
-    background-color: #00AB98;
+    background: none #00AB98;
     color: white;
     box-shadow: none;
 }
 
 
 .ui-paginator-page{
-    background-color: #00AB98 !important;
+    background: none #00AB98 !important;
     text-decoration: none !important;
     color: white !important;
     border: none !important;
@@ -281,7 +294,7 @@ linkdoc{
     padding-bottom: 3px !important;
 }
 .teste .ui-state-active{
-    background-color: #00AB98;    
+    background: none #00AB98;    
 }
 .ui-dialog .ui-dialog-content{
     overflow: hidden !important;
@@ -331,6 +344,10 @@ button.mostrarlog{
     border: none;
 }
 
+.ui-datatable-data {
+    padding-bottom: 1000px;
+}
+
 div.mostraimagem{
     max-height:600px;
     max-width: 800px;
@@ -346,7 +363,7 @@ div.email{
     top: 10% !important;
 }
 .ui-button {
-    background-color: #00AB98 !important;
+    background: none #00AB98 !important;
     border: none !important;
     color: white !important;
     border-radius: 4px !important;
